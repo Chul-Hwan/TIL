@@ -72,6 +72,20 @@ public class Solution {
     }
 }
 ```
+## 추가 풀이
+```c#
+var max = citations.Max();
+var answer = 0;
+for (int h = 1; h <= max; h++)
+{
+    var check = citations.Count(c => c >= h) >= h;
+    if (check)
+    {
+        answer = h;
+    }
+}
+return answer;
+```
 
 ## 회고
 - 두 번째 풀 때는 문제를 잘 못 읽었음. H-Index 값이 배열의 요소값으로 들어있다고 착각함.
